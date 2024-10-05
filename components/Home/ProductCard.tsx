@@ -14,14 +14,14 @@ const ProductCard = ({ product }: Props) => {
 
     return (
         <div className="p-4">
-            <div className="w-[200px] h-[150px]">
+            <div className="w-full h-[150px]">
                 <Link href={`/product/product-details/${product.id}`}>
                     <Image
                         src={product.image}
                         alt={product.title}
                         width={100}
                         height={100}
-                        className="w-[80%] h-[80%] cursor-pointer object-contain"
+                        className="cursor-pointer object-contain"
                     />
                 </Link>
             </div>

@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 justify-between w-4/5 mx-auto">
                 <p className="text-sm text-black opacity-60">
-                    © Copyright shop 2024
+                    © 2024 Company. All rights reserved.
                 </p>
                 <Image
                     src="/pay.svg"
