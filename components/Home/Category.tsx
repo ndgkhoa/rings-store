@@ -12,7 +12,7 @@ const Category = async () => {
                 {categories.map((category) => (
                     <div
                         key={category}
-                        className="p-6 rounded-lg cursor-pointer text-center hover:scale-110 transition-all duration-300 bg-gray-300 shadow-md"
+                        className="p-6 rounded-lg cursor-pointer text-center hover:scale-110 transition-all duration-300 bg-gray-200 shadow-md"
                     >
                         <h1 className="text-sm sm:text-base md:text-lg capitalize font-bold">
                             {category}

@@ -1,3 +1,4 @@
+import AllProduct from './AllProduct'
 import Category from './Category'
 import Hero from './Hero'
 
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Hero />
             <Category />
+            <AllProduct />
         </div>
     )
 }
