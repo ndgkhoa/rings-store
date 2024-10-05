@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+html,
+body,
+:root {
+    height: 100%;
     user-select: none;
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+@layer components {
+    .footer__title {
+        @apply text-xl text-black mb-6;
     }
-}
 
-@layer base {
-    :root {
-        --radius: 0.5rem;
+    .footer__link {
+        @apply text-black text-[15px] opacity-90 mb-4 w-fit cursor-pointer hover:text-yellow-600;
     }
 }

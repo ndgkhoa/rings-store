@@ -5,11 +5,9 @@ import { Heart, ShoppingBag, StarIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-
 type Props = {
     product: Product
 }
-
 const ProductCard = ({ product }: Props) => {
     const num = Math.round(product.rating.rate)
     const ratingArr = new Array(num).fill(0)
@@ -17,13 +15,15 @@ const ProductCard = ({ product }: Props) => {
     return (
         <div className="p-4">
             <div className="w-[200px] h-[150px]">
-                <Image
-                    src={product.image}
-                    alt={product.title}
-                    width={100}
-                    height={100}
-                    className="w-[80%] h-[80%] object-contain"
-                />
+                <Link href={`/product/product-details/${product.id}`}>
+                    <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={100}
+                        height={100}
+                        className="w-[80%] h-[80%] cursor-pointer object-contain"
+                    />
+                </Link>
             </div>
             <p className="mt-5 text-xs capitalize text-gray-600">
                 {product.category}
@@ -51,7 +51,7 @@ const ProductCard = ({ product }: Props) => {
                     ${product.price}
                 </p>
             </div>
-            <div className="mt-4 items-center space-x-2">
+            <div className="mt-4 flex items-center space-x-2">
                 <Button size={'icon'}>
                     <ShoppingBag size={18} />
                 </Button>
@@ -62,5 +62,4 @@ const ProductCard = ({ product }: Props) => {
         </div>
     )
 }
-
 export default ProductCard
