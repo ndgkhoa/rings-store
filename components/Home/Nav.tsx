@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SearchBox from '../Helper/SearchBox'
 import { HeartIcon, UserIcon } from 'lucide-react'
 import ShoppingCartButton from '../Helper/ShoppingCartButton'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 const Nav = () => {
     return (
@@ -20,7 +21,14 @@ const Nav = () => {
                     <SearchBox />
                     <HeartIcon size={26} cursor={'pointer'} />
                     <ShoppingCartButton />
-                    <UserIcon size={26} cursor={'pointer'} />
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                    <SignedOut>
+                        <SignInButton>
+                            <UserIcon size={26} cursor={'pointer'} />
+                        </SignInButton>
+                    </SignedOut>
                 </div>
             </div>
         </div>
