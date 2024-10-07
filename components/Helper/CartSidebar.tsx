@@ -31,7 +31,7 @@ const CartSidebar = ({ items }: Props) => {
                         className="object-cover mx-auto"
                     />
                     <h1 className="mt-8 text-2xl font-semibold">
-                        Your Cart is empty
+                        Your cart is empty
                     </h1>
                 </div>
             )}
