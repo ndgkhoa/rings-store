@@ -4,8 +4,8 @@ import './globals.css'
 import Nav from '@/components/Home/Nav'
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Home/Footer'
-import { store } from '@/redux/store'
 import ReduxProvider from '@/redux/ReduxProvider'
+import { Toaster } from '@/components/ui/toaster'
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -37,6 +37,7 @@ export default function RootLayout({
                     >
                         <Nav />
                         {children}
+                        <Toaster />
                         <Footer />
                     </body>
                 </html>

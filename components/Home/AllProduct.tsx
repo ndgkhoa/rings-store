@@ -9,7 +9,6 @@ import ProductCard from './ProductCard'
 const AllProduct = () => {
     const [products, setProducts] = useState<Product[] | null>(null)
     const [loading, setLoading] = useState(true)
-    console.log(products)
 
     useEffect(() => {
         const getData = async () => {

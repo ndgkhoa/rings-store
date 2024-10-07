@@ -5,9 +5,9 @@ import { Heart, ShoppingBag, StarIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addItem } from '@/redux/slices/cartSlice'
-import { RootState } from '@/redux/store'
+import { useToast } from '@/hooks/use-toast'
 
 type Props = {
     product: Product
@@ -15,13 +15,12 @@ type Props = {
 const ProductCard = ({ product }: Props) => {
     const num = Math.round(product.rating.rate)
     const ratingArr = new Array(num).fill(0)
-
-    const items = useSelector((state: RootState) => state.cart.items)
-    console.log(items)
+    const { toast } = useToast()
 
     const dispatch = useDispatch()
 
     const addToCartHandle = (product: Product) => {
+        toast({ description: 'Item added to cart', variant: 'success' })
         dispatch(addItem(product))
     }
 
