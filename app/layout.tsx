@@ -4,6 +4,8 @@ import './globals.css'
 import Nav from '@/components/Home/Nav'
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Home/Footer'
+import { store } from '@/redux/store'
+import ReduxProvider from '@/redux/ReduxProvider'
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -28,15 +30,17 @@ export default function RootLayout({
 }>) {
     return (
         <ClerkProvider>
-            <html lang="en">
-                <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                >
-                    <Nav />
-                    {children}
-                    <Footer />
-                </body>
-            </html>
+            <ReduxProvider>
+                <html lang="en">
+                    <body
+                        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                    >
+                        <Nav />
+                        {children}
+                        <Footer />
+                    </body>
+                </html>
+            </ReduxProvider>
         </ClerkProvider>
     )
 }
